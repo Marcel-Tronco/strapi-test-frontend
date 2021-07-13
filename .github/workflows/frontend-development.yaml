@@ -16,11 +16,12 @@ jobs:
           node-version: '12.x'
       - name: build
         run: npm install && npm run build
+        env: 
+          API_URL: ${{ secrets.STRAPI_API_URL}}
       - name: Deploy with gh-pages 
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${PAGES_REPO}
           npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          API_URL: ${{ secrets.STRAPI_API_URL}}
           PAGES_REPO: ${{ secrets.GH_PAGES_REPO }}
