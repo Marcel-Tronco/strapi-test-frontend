@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,6 +27,5 @@ jobs:
         env:
           API_URL: ${{ secrets.STRAPI_API_URL}}
           GATSBY_ROOT_URL: §{{ secrets.GATSBY_ROOT_URL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN}}
           PAGES_REPO: ${{ secrets.GH_PAGES_REPO }}
