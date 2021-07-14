@@ -21,7 +21,7 @@ jobs:
           GATSBY_ROOT_URL: §{{ secrets.GATSBY_ROOT_URL }}
       - name: Deploy with gh-pages 
         run: |
-          git remote set-url origin https://git:${ACCESS_TOKEN}@github.com/${PAGES_REPO}
+          git remote set-url origin https://x-access-token:${ACCESS_TOKEN}@github.com/${PAGES_REPO}
           npx gh-pages -d public -u "github-actions-bot <support+actions@github.com>"
         env:
           API_URL: ${{ secrets.STRAPI_API_URL}}
