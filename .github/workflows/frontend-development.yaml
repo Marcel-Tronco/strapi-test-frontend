@@ -21,7 +21,7 @@ jobs:
           GATSBY_ROOT_URL: §{{ secrets.GATSBY_ROOT_URL }}
       - name: Deploy with gh-pages 
         run: |
-          echo ${ GITHUB_TOKEN } && echo ${ PAGES_REPO }
+          echo $GITHUB_TOKEN && echo $PAGES_REPO
           npm run deploy
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
